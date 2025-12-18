@@ -16,7 +16,6 @@ export default function Hero() {
             <p className="subtitle">Somos a NetSecurity. Protegendo seu negócio com soluções de ponta e uma equipe dedicada de especialistas.</p>
         </ScrollReveal>
         
-        {/* Interface Dashboard - Cópia Fiel do HTML */}
         <ScrollReveal delay="delay-4" className="hero-interface-container">
             <div className="interface-glass">
                 <div className="interface-header">
