@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
+import Header from '@/components/Header'
 import './globals.css'
 
 const poppins = Poppins({ 
@@ -24,7 +25,10 @@ export default function RootLayout({
       <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
       </head>
-      <body className={`${poppins.variable} font-sans antialiased`}>
+      <body className={`${poppins.variable} font-sans antialiased bg-coal text-eggshell`}>
+        <div className="absolute top-0 left-0 w-full z-50">
+          <Header />
+        </div>
         {children}
       </body>
     </html>

@@ -3,15 +3,11 @@
 @tailwind utilities;
 
 :root {
-  --bg-main: 26 26 26;
-  
-  --bg-surface: 21 34 61;
-  
-  --text-main: 242 242 242;
-  
-  --brand-primary: 221 110 66;
-  
-  --brand-secondary: 172 236 161;
+  --coal: 26 26 26; 
+  --oxford: 21 34 61;
+  --eggshell: 242 242 242;
+  --sienna: 221 110 66; 
+  --mint: 172 236 161; 
 }
 
 html {
@@ -19,35 +15,30 @@ html {
 }
 
 body {
-  background-color: rgb(var(--bg-main));
-  color: rgb(var(--text-main));
-  @apply overflow-x-hidden antialiased;
+  @apply bg-coal text-eggshell overflow-x-hidden antialiased;
 }
 
 @layer components {
   .glass-card {
-    @apply bg-surface/60 border border-white/5 backdrop-blur-md rounded-2xl transition-all duration-300;
+    @apply bg-oxford/70 border border-white/10 backdrop-blur-md rounded-xl transition-all duration-300;
   }
   
   .glass-card:hover {
-    @apply border-brand-primary/50 shadow-[0_0_30px_rgba(221,110,66,0.15)] -translate-y-1;
+    @apply border-sienna/50 shadow-[0_0_30px_rgba(221,110,66,0.15)] -translate-y-1 bg-oxford/90;
+  }
+
+  .partner-logo {
+    @apply h-12 w-auto mx-10 opacity-60 brightness-0 invert transition-all duration-300 cursor-pointer;
+  }
+
+  .partner-logo:hover {
+    @apply opacity-100 filter-none scale-110 drop-shadow-[0_0_8px_rgba(172,236,161,0.5)];
   }
 }
 
-.scroll-reveal {
-  opacity: 0;
-  transform: translateY(30px) scale(0.98);
-  filter: blur(10px);
-  transition: all 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-
-.scroll-reveal.visible {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-  filter: blur(0);
-}
-
+.scroll-reveal { opacity: 0; transform: translateY(30px) scale(0.98); filter: blur(10px); transition: all 1.2s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.scroll-reveal.visible { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
 .delay-1 { transition-delay: 0.1s; }
 .delay-2 { transition-delay: 0.3s; }
 .delay-3 { transition-delay: 0.5s; }
-.delay-4 { transition-delay: 1.0s; }
+.mask-gradient { mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); }
