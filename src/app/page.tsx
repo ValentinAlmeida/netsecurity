@@ -9,6 +9,8 @@ import ScrollReveal from '@/components/ScrollReveal'
 
 export default function Home() {
 
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
+
   const partners = [
     'cisco', 'citrix', 'netwitness', 'trendmicro', 
     'tenable', 'fortinet', 'delinea', 'firemon', 
@@ -47,7 +49,7 @@ export default function Home() {
 
                 <ScrollReveal delay="delay-3" className="bento-card">
                     <div className="card-graphic graphic-ciber">
-                         <div className="lock-body"></div> <div className="lock-shackle"></div> <div className="scan-line"></div>
+                          <div className="lock-body"></div> <div className="lock-shackle"></div> <div className="scan-line"></div>
                     </div>
                     <h3>Infraestrutura de Operações</h3>
                     <p>Nossa infraestrutura 24x7 garante o maior nível de segurança, monitorando milhares de eventos e vulnerabilidades.</p>
@@ -127,14 +129,14 @@ export default function Home() {
             <ScrollReveal delay="delay-1" className="partners-slider">
                 <div className="slide-track">
                     {[...partners, ...partners].map((partner, index) => (
-                         <Image 
+                          <Image 
                             key={index} 
-                            src={`/assets/img/${partner}.png`} 
+                            src={`${basePath}/assets/img/${partner}.png`} 
                             alt={partner} 
                             width={150}
                             height={60}
                             className="partner-img" 
-                         />
+                          />
                     ))}
                 </div>
             </ScrollReveal>
