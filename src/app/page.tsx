@@ -56,14 +56,15 @@ export default function Home() {
                     <p className="text-[15px] text-muted leading-relaxed">Nossa infraestrutura 24x7 garante o maior nível de segurança, monitorando milhares de eventos.</p>
                 </ScrollReveal>
                 
-                 <ScrollReveal delay="delay-1" className="glass-card p-8 flex flex-col md:flex-row items-center gap-6 md:col-span-2 opacity-70 transition-all duration-300 hover:opacity-100 hover:border-accent hover:shadow-[0_10px_40px_-10px_rgba(59,130,246,0.3)] hover:-translate-y-1 cursor-default">
+                 {/* CARDS LARGOS CORRIGIDOS: Removida a opacidade excessiva para bater com o original */}
+                 <ScrollReveal delay="delay-1" className="glass-card p-8 flex flex-col md:flex-row items-center gap-6 md:col-span-2 transition-all duration-300 hover:border-accent hover:shadow-[0_10px_40px_-10px_rgba(59,130,246,0.3)] hover:-translate-y-1">
                     <div className="flex-1">
                          <h3 className="text-xl mb-2 font-semibold text-foreground">+20 Anos de Experiência</h3>
                          <p className="text-muted">Uma trajetória sólida protegendo grandes corporações.</p>
                     </div>
                 </ScrollReveal>
 
-                 <ScrollReveal delay="delay-2" className="glass-card p-8 flex flex-col md:flex-row items-center gap-6 md:col-span-1 opacity-70 transition-all duration-300 hover:opacity-100 hover:border-accent hover:shadow-[0_10px_40px_-10px_rgba(59,130,246,0.3)] hover:-translate-y-1 cursor-default">
+                 <ScrollReveal delay="delay-2" className="glass-card p-8 flex flex-col md:flex-row items-center gap-6 md:col-span-1 transition-all duration-300 hover:border-accent hover:shadow-[0_10px_40px_-10px_rgba(59,130,246,0.3)] hover:-translate-y-1">
                     <div className="flex-1">
                         <h3 className="text-xl mb-2 font-semibold text-foreground">Certificações Globais</h3>
                         <p className="text-muted">Equipe altamente qualificada.</p>

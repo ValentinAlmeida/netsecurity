@@ -22,6 +22,7 @@ export default function Hero() {
             </p>
         </ScrollReveal>
         
+        {/* CORREÇÃO: Wrapper absoluto que centraliza, protegendo o ScrollReveal interno de conflitos de transform */}
         <div className="absolute left-1/2 top-[55%] -translate-x-1/2 w-screen h-[800px] flex justify-center z-0 pointer-events-none">
             <ScrollReveal delay="delay-4" className="w-full flex justify-center">
                 <div 
@@ -86,6 +87,7 @@ export default function Hero() {
                         <p className="text-muted">Agora você pode adquirir nossos serviços especializados pelo Marketplace da AWS.</p>
                     </div>
                 </div>
+                {/* CORREÇÃO: Adicionado hover:-translate-y-1 */}
                 <a href="#" className="whitespace-nowrap px-8 py-3.5 bg-accent text-background font-bold rounded-md border border-accent hover:bg-accent-hover hover:border-accent-hover shadow-[0_4px_20px_rgba(59,130,246,0.4)] transition-all hover:-translate-y-1">
                     CONFIRA
                 </a>
