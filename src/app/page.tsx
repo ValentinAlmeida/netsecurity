@@ -1,16 +1,10 @@
-'use client'
-
-import Image from 'next/image'
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
 import Footer from '@/components/Footer'
-import VideoBackground from '@/components/VideoBackground'
+import ThreeBackground from '@/components/ThreeBackground'
 import ScrollReveal from '@/components/ScrollReveal'
 
 export default function Home() {
-
-  const basePath = '/netsecurity';
-
   const partners = [
     'cisco', 'citrix', 'netwitness', 'trendmicro', 
     'tenable', 'fortinet', 'delinea', 'firemon', 
@@ -19,7 +13,7 @@ export default function Home() {
 
   return (
     <>
-      <VideoBackground />
+      <ThreeBackground />
       
       <div className="container">
         <Header />
@@ -49,7 +43,7 @@ export default function Home() {
 
                 <ScrollReveal delay="delay-3" className="bento-card">
                     <div className="card-graphic graphic-ciber">
-                          <div className="lock-body"></div> <div className="lock-shackle"></div> <div className="scan-line"></div>
+                         <div className="lock-body"></div> <div className="lock-shackle"></div> <div className="scan-line"></div>
                     </div>
                     <h3>Infraestrutura de Operações</h3>
                     <p>Nossa infraestrutura 24x7 garante o maior nível de segurança, monitorando milhares de eventos e vulnerabilidades.</p>
@@ -129,14 +123,12 @@ export default function Home() {
             <ScrollReveal delay="delay-1" className="partners-slider">
                 <div className="slide-track">
                     {[...partners, ...partners].map((partner, index) => (
-                          <Image 
+                         <img 
                             key={index} 
-                            src={`${basePath}/assets/img/${partner}.png`} 
+                            src={`/assets/img/${partner}.png`} 
                             alt={partner} 
-                            width={150}
-                            height={60}
                             className="partner-img" 
-                          />
+                         />
                     ))}
                 </div>
             </ScrollReveal>
