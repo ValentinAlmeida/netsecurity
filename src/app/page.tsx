@@ -1,13 +1,13 @@
-'use client'
-
 import Image from 'next/image'
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
 import Footer from '@/components/Footer'
-import ThreeBackground from '@/components/ThreeBackground'
+import VideoBackground from '@/components/VideoBackground'
 import ScrollReveal from '@/components/ScrollReveal'
 
 export default function Home() {
+
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
   const partners = [
     'cisco', 'citrix', 'netwitness', 'trendmicro', 
@@ -17,7 +17,7 @@ export default function Home() {
 
   return (
     <>
-      <ThreeBackground />
+      <VideoBackground />
       
       <div className="container">
         <Header />
@@ -129,7 +129,7 @@ export default function Home() {
                     {[...partners, ...partners].map((partner, index) => (
                          <Image 
                             key={index} 
-                            src={`/assets/img/${partner}.png`} 
+                            src={`${basePath}/assets/img/${partner}.png`} 
                             alt={partner} 
                             width={150}
                             height={60}

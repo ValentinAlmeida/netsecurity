@@ -399,3 +399,31 @@ footer { background: var(--bg-secondary); padding: 80px 0 0; border-top: 1px sol
     nav a { font-size: 11px; padding: 5px; }
     .nav-cta { padding: 6px 12px; }
 }
+
+.video-bg-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -2;
+}
+
+.video-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: radial-gradient(circle at 50% 50%, rgba(26, 26, 26, 0.4) 0%, rgba(21, 34, 61, 0.8) 100%);
+    pointer-events: none;
+    z-index: -1;
+}
