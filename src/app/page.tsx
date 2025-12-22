@@ -9,7 +9,7 @@ import ScrollReveal from '@/components/ScrollReveal'
 
 export default function Home() {
 
-  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
+  const basePath = '/netsecurity';
 
   const partners = [
     'cisco', 'citrix', 'netwitness', 'trendmicro', 
