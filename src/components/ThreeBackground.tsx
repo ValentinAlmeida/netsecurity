@@ -62,8 +62,8 @@ export default function ThreeBackground() {
 
   return (
     <>
-      <div ref={mountRef} style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', zIndex: -2, opacity: 0.4 }} />
-      <div className="glow-overlay"></div>
+      <div ref={mountRef} className="fixed top-0 left-0 w-full h-full -z-20 opacity-40" />
+      <div className="absolute top-0 left-0 w-full h-screen bg-[radial-gradient(circle_at_50%_0%,rgba(59,130,246,0.15)_0%,transparent_60%)] opacity-60 pointer-events-none -z-10"></div>
     </>
   )
 }
