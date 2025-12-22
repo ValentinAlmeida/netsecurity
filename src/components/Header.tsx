@@ -1,12 +1,13 @@
 import Link from 'next/link'
-import Image from 'next/image'
 
 export default function Header() {
+  const basePath = '/netsecurity';
+
   return (
     <header>
       <div className="logo">
-        <Image 
-            src="/assets/img/logo.png" 
+        <img 
+            src={`${basePath}/assets/img/logo.png`} 
             alt="NetSecurity" 
             width={32} 
             height={32} 

@@ -7,7 +7,7 @@ import ThreeBackground from '@/components/ThreeBackground'
 import ScrollReveal from '@/components/ScrollReveal'
 
 export default function Home() {
-  const basePath = '/netsecurity'; 
+  const basePath = '/netsecurity';
 
   const partners = [
     'cisco', 'citrix', 'netwitness', 'trendmicro', 
