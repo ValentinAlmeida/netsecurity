@@ -2,17 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --bg-main: 26 26 26;
+  
+  --bg-surface: 21 34 61;
+  
+  --text-main: 242 242 242;
+  
+  --brand-primary: 221 110 66;
+  
+  --brand-secondary: 172 236 161;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  @apply bg-background text-foreground overflow-x-hidden antialiased;
+  background-color: rgb(var(--bg-main));
+  color: rgb(var(--text-main));
+  @apply overflow-x-hidden antialiased;
 }
 
 @layer components {
   .glass-card {
-    @apply bg-[#1a1a1a]/70 border border-accent/30 backdrop-blur-xl rounded-3xl;
+    @apply bg-surface/60 border border-white/5 backdrop-blur-md rounded-2xl transition-all duration-300;
+  }
+  
+  .glass-card:hover {
+    @apply border-brand-primary/50 shadow-[0_0_30px_rgba(221,110,66,0.15)] -translate-y-1;
   }
 }
 

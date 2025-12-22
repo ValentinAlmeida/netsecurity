@@ -9,17 +9,18 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['var(--font-poppins)', 'sans-serif'],
+      },
       colors: {
-        background: "#1a1a1a",
-        secondary: "#15223d",
-        foreground: "#f2f2f2",
-        muted: "rgba(242, 242, 242, 0.7)",
-        accent: {
-          DEFAULT: "#3b82f6",
-          hover: "#1d4ed8",
-          secondary: "#aceca1",
-          orange: "#ff6b35",
-        },
+        background: 'rgb(var(--bg-main) / <alpha-value>)',
+        surface: 'rgb(var(--bg-surface) / <alpha-value>)',
+        foreground: 'rgb(var(--text-main) / <alpha-value>)',
+        muted: 'rgb(var(--text-main) / 0.7)',
+        brand: {
+          primary: 'rgb(var(--brand-primary) / <alpha-value>)',
+          secondary: 'rgb(var(--brand-secondary) / <alpha-value>)',
+        }
       },
       animation: {
         scroll: "scroll 35s linear infinite",

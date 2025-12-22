@@ -2,16 +2,16 @@ import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
 import './globals.css'
 
-const poppins = Poppins({
-  weight: ['300', '400', '500', '600', '700'],
+const poppins = Poppins({ 
   subsets: ['latin'],
-  display: 'swap',
+  weight: ['300', '400', '500', '600', '700', '900'],
   variable: '--font-poppins',
+  display: 'swap',
 })
 
 export const metadata: Metadata = {
-  title: 'NetSecurity - Líder em Cibersegurança',
-  description: 'Soluções avançadas de cibersegurança.',
+  title: 'NetSecurity',
+  description: 'Líder em Cibersegurança',
 }
 
 export default function RootLayout({
@@ -24,7 +24,9 @@ export default function RootLayout({
       <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
       </head>
-      <body className={poppins.className}>{children}</body>
+      <body className={`${poppins.variable} font-sans antialiased`}>
+        {children}
+      </body>
     </html>
   )
 }
