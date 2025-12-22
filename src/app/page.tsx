@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
 import Footer from '@/components/Footer'
@@ -7,7 +8,6 @@ import ThreeBackground from '@/components/ThreeBackground'
 import ScrollReveal from '@/components/ScrollReveal'
 
 export default function Home() {
-  const basePath = '/netsecurity';
 
   const partners = [
     'cisco', 'citrix', 'netwitness', 'trendmicro', 
@@ -127,10 +127,12 @@ export default function Home() {
             <ScrollReveal delay="delay-1" className="partners-slider">
                 <div className="slide-track">
                     {[...partners, ...partners].map((partner, index) => (
-                         <img 
+                         <Image 
                             key={index} 
-                            src={`${basePath}/assets/img/${partner}.png`} 
+                            src={`/assets/img/${partner}.png`} 
                             alt={partner} 
+                            width={150}
+                            height={60}
                             className="partner-img" 
                          />
                     ))}
