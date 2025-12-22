@@ -1,3 +1,5 @@
+'use client'
+
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
 import Footer from '@/components/Footer'
@@ -5,6 +7,8 @@ import ThreeBackground from '@/components/ThreeBackground'
 import ScrollReveal from '@/components/ScrollReveal'
 
 export default function Home() {
+  const basePath = '/netsecurity'; 
+
   const partners = [
     'cisco', 'citrix', 'netwitness', 'trendmicro', 
     'tenable', 'fortinet', 'delinea', 'firemon', 
@@ -125,7 +129,7 @@ export default function Home() {
                     {[...partners, ...partners].map((partner, index) => (
                          <img 
                             key={index} 
-                            src={`/assets/img/${partner}.png`} 
+                            src={`${basePath}/assets/img/${partner}.png`} 
                             alt={partner} 
                             className="partner-img" 
                          />

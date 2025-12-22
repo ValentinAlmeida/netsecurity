@@ -5,7 +5,13 @@ export default function Header() {
   return (
     <header>
       <div className="logo">
-        <Image src="/assets/img/logo.png" alt="NetSecurity" width={32} height={32} style={{ marginRight: '12px' }} />
+        <Image 
+            src="/assets/img/logo.png" 
+            alt="NetSecurity" 
+            width={32} 
+            height={32} 
+            style={{ marginRight: '12px' }} 
+        />
         NetSecurity
       </div>
       <nav>
