@@ -20,12 +20,14 @@ const Home = () => {
   ];
 
   return (
-    <main className="min-h-screen font-sans selection:bg-sienna selection:text-white">
+    <main className="min-h-screen font-sans selection:bg-sienna selection:text-white overflow-hidden">
       
       <Hero />
 
-      <section className="relative z-10 py-28 bg-coal">
-        <div className="max-w-[1200px] mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+      <section className="relative z-10 py-28 bg-coal cyber-grid">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-oxford/30 rounded-full blur-[100px] animate-pulse-slow pointer-events-none"></div>
+
+        <div className="max-w-[1200px] mx-auto px-6 grid md:grid-cols-2 gap-16 items-center relative z-10">
           <ScrollReveal>
             <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-6 text-eggshell">
               Cada negócio é único. <br />
@@ -41,13 +43,14 @@ const Home = () => {
           
           <ScrollReveal delay="delay-2" className="h-full min-h-[400px] bg-oxford/50 rounded-3xl border border-white/10 flex items-center justify-center relative overflow-hidden group">
              <div className="absolute inset-0 bg-gradient-to-tr from-sienna/20 to-oxford/20 opacity-50 group-hover:opacity-70 transition-opacity"></div>
-             <i className="fa-solid fa-fingerprint text-8xl text-sienna/30 group-hover:text-sienna/50 transition-colors"></i>
+             <i className="fa-solid fa-fingerprint text-8xl text-sienna/30 group-hover:text-sienna/50 transition-colors animate-float"></i>
           </ScrollReveal>
         </div>
       </section>
 
-      <section className="py-24 bg-oxford border-y border-white/5">
-        <div className="max-w-[1000px] mx-auto px-6 text-center">
+      <section className="py-24 bg-oxford border-y border-white/5 relative">
+        <div className="absolute inset-0 cyber-grid opacity-30"></div> {/* Grid sutil */}
+        <div className="max-w-[1000px] mx-auto px-6 text-center relative z-10">
           <ScrollReveal>
             <span className="block text-sienna font-bold tracking-wider uppercase mb-4">Nossa Essência</span>
             <h3 className="text-3xl md:text-4xl font-bold mb-8 text-eggshell">
@@ -60,8 +63,11 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="py-28 bg-coal overflow-hidden">
-        <div className="max-w-[1200px] mx-auto px-6">
+      <section className="py-28 bg-coal overflow-hidden relative">
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-oxford/20 rounded-full blur-[120px] animate-blob"></div>
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-sienna/10 rounded-full blur-[120px] animate-blob animation-delay-2000"></div>
+
+        <div className="max-w-[1200px] mx-auto px-6 relative z-10">
           <ScrollReveal>
             <div className="text-center mb-20">
               <h2 className="text-3xl font-bold text-eggshell mb-4">Maturidade e Evolução Constante</h2>
@@ -72,8 +78,8 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="py-28 bg-oxford/50">
-        <div className="max-w-[1200px] mx-auto px-6 text-center">
+      <section className="py-28 bg-oxford/50 relative">
+        <div className="max-w-[1200px] mx-auto px-6 text-center relative z-10">
           <ScrollReveal>
             <h2 className="text-3xl font-bold mb-6 text-eggshell">Ecossistema Estratégico</h2>
             <p className="max-w-2xl mx-auto text-muted mb-20 text-lg">
@@ -97,12 +103,12 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="py-24 bg-coal">
-        <div className="max-w-[1200px] mx-auto px-6">
+      <section className="py-24 bg-coal cyber-grid">
+        <div className="max-w-[1200px] mx-auto px-6 relative z-10">
           <ScrollReveal className="flex justify-between items-end mb-12">
             <h2 className="text-3xl font-bold text-eggshell">Notícias e Artigos</h2>
             <a href="/blog" className="text-sienna hover:text-mint transition-colors text-sm font-bold uppercase tracking-wider flex items-center gap-2">
-              Ver tudo <i className="fa-solid fa-arrow-right"></i>
+              Ver tudo <i className="fa-solid fa-arrow-right animate-pulse"></i>
             </a>
           </ScrollReveal>
           
@@ -112,7 +118,7 @@ const Home = () => {
                 <div className="h-52 bg-oxford relative overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-t from-coal/80 to-transparent z-10"></div>
                   <div className="w-full h-full bg-oxford group-hover:scale-105 transition-transform duration-700 flex items-center justify-center">
-                    <i className="fa-regular fa-image text-4xl text-white/20"></i>
+                    <i className={`fa-regular fa-image text-4xl text-white/20 ${index % 2 === 0 ? 'animate-float' : 'animate-float-delayed'}`}></i>
                   </div>
                   <span className="absolute top-4 left-4 z-20 bg-sienna text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">{item.category}</span>
                 </div>
@@ -128,8 +134,8 @@ const Home = () => {
 
       <section className="py-24 bg-oxford relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
-            <i className="fa-solid fa-network-wired absolute top-10 left-10 text-9xl"></i>
-            <i className="fa-solid fa-shield-halved absolute bottom-10 right-10 text-9xl"></i>
+            <i className="fa-solid fa-network-wired absolute top-10 left-10 text-9xl animate-float"></i>
+            <i className="fa-solid fa-shield-halved absolute bottom-10 right-10 text-9xl animate-float-delayed"></i>
         </div>
 
         <div className="max-w-[1000px] mx-auto px-6 relative z-10 rounded-3xl bg-coal/50 border border-white/5 p-12 md:p-16 backdrop-blur-lg flex flex-col md:flex-row items-center justify-between gap-10 shadow-2xl">
