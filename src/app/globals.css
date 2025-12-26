@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 :root {
-  --coal: 26 26 26; 
+  --coal: 26 26 26;
   --oxford: 21 34 61;
   --eggshell: 242 242 242;
-  --sienna: 221 110 66; 
-  --mint: 172 236 161; 
+  --sienna: 221 110 66;
+  --mint: 172 236 161;
 }
 
 html {
@@ -27,12 +27,16 @@ body {
     @apply border-sienna/50 shadow-[0_0_30px_rgba(221,110,66,0.15)] -translate-y-1 bg-oxford/90;
   }
 
-  .partner-logo {
-    @apply h-12 w-auto mx-10 opacity-60 brightness-0 invert transition-all duration-300 cursor-pointer;
+  .partner-card {
+    @apply bg-eggshell/95 rounded-xl p-4 mx-5 h-24 w-44 flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-[0_0_20px_rgba(221,110,66,0.2)] hover:-translate-y-1 hover:bg-white border border-white/50;
   }
 
-  .partner-logo:hover {
-    @apply opacity-100 filter-none scale-110 drop-shadow-[0_0_8px_rgba(172,236,161,0.5)];
+  .partner-logo {
+    @apply h-auto w-auto max-h-14 max-w-[85%] object-contain filter-none opacity-90 transition-all duration-300;
+  }
+
+  .partner-card:hover .partner-logo {
+    @apply opacity-100 scale-105;
   }
 }
 
@@ -41,4 +45,4 @@ body {
 .delay-1 { transition-delay: 0.1s; }
 .delay-2 { transition-delay: 0.3s; }
 .delay-3 { transition-delay: 0.5s; }
-.mask-gradient { mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); }
+.mask-gradient { mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent); }

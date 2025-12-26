@@ -72,24 +72,25 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="py-24 bg-oxford/50">
+      <section className="py-28 bg-oxford/50">
         <div className="max-w-[1200px] mx-auto px-6 text-center">
           <ScrollReveal>
             <h2 className="text-3xl font-bold mb-6 text-eggshell">Ecossistema Estratégico</h2>
-            <p className="max-w-2xl mx-auto text-muted mb-16 text-lg">
+            <p className="max-w-2xl mx-auto text-muted mb-20 text-lg">
               Construímos um ecossistema sólido de parceiros globais, escolhidos pela excelência técnica para gerar valor real.
             </p>
           </ScrollReveal>
 
-          <ScrollReveal delay="delay-1" className="overflow-hidden py-10 relative w-full mask-gradient">
+          <ScrollReveal delay="delay-1" className="overflow-hidden py-4 relative w-full mask-gradient">
               <div className="flex w-fit animate-scroll items-center hover:[animation-play-state:paused]">
                   {[...partners, ...partners].map((partner, index) => (
+                    <div key={index} className="partner-card">
                         <img 
-                          key={index} 
                           src={`/assets/img/${partner}.png`} 
                           alt={partner} 
                           className="partner-logo" 
                         />
+                    </div>
                   ))}
               </div>
           </ScrollReveal>
