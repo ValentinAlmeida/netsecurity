@@ -28,7 +28,6 @@ const Home = () => {
       
       <Hero />
 
-      {/* --- SEÇÃO: CADA NEGÓCIO É ÚNICO --- */}
       <section className="relative z-10 py-28 bg-coal cyber-grid">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-oxford/30 rounded-full blur-[100px] animate-pulse-slow pointer-events-none"></div>
 
@@ -46,7 +45,6 @@ const Home = () => {
             </Link>
           </ScrollReveal>
           
-          {/* Imagem substituindo o ícone antigo */}
           <ScrollReveal delay="delay-2" className="h-full min-h-[400px] rounded-3xl overflow-hidden relative group border border-white/10 shadow-2xl">
              <div className="absolute inset-0 bg-sienna/10 z-10 group-hover:bg-transparent transition-colors duration-500"></div>
              <Image 
@@ -59,23 +57,21 @@ const Home = () => {
         </div>
       </section>
 
-      {/* --- SEÇÃO: NOSSA ESSÊNCIA (COM VÍDEO DE FUNDO) --- */}
       <section className="py-24 relative border-y border-white/5 overflow-hidden">
         
-        {/* Vídeo de Background */}
         <div className="absolute inset-0 z-0">
             <video 
                 autoPlay 
                 loop 
                 muted 
                 playsInline 
-                className="w-full h-full object-cover opacity-30 blur-[2px]" // Opacidade baixa e leve blur para o texto sobressair
+                className="w-full h-full object-cover opacity-40" 
             >
                 <source src="/assets/img/essencia_video.mp4" type="video/mp4" />
             </video>
-            {/* Camada de cor para garantir leitura do texto sobre o vídeo */}
-            <div className="absolute inset-0 bg-oxford/90 mix-blend-multiply"></div>
-            <div className="absolute inset-0 cyber-grid opacity-20"></div>
+            
+            <div className="absolute inset-0 bg-gradient-to-r from-coal/95 via-coal/80 to-coal/95 mix-blend-multiply"></div>
+            <div className="absolute inset-0 cyber-grid opacity-10"></div>
         </div>
 
         <div className="max-w-[1000px] mx-auto px-6 text-center relative z-10">
@@ -84,14 +80,13 @@ const Home = () => {
             <h3 className="text-3xl md:text-4xl font-bold mb-8 text-eggshell drop-shadow-lg">
               Antes da cibersegurança se tornar prioridade, <span className="text-mint">ela já era o nosso foco.</span>
             </h3>
-            <p className="text-gray-300 text-xl leading-relaxed max-w-3xl mx-auto drop-shadow-md">
+            <p className="text-gray-200 text-xl leading-relaxed max-w-3xl mx-auto drop-shadow-md font-medium">
               São mais de <strong className="text-white">25 anos</strong> qualificando e entregando projetos que conectam tecnologia, pessoas e estratégia para proteger o que realmente importa.
             </p>
           </ScrollReveal>
         </div>
       </section>
 
-      {/* --- Restante do Código (Timeline, Parceiros, Notícias...) --- */}
       <section className="py-28 bg-coal overflow-hidden relative">
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-oxford/20 rounded-full blur-[120px] animate-blob"></div>
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-sienna/10 rounded-full blur-[120px] animate-blob animation-delay-2000"></div>
