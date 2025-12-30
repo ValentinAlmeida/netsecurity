@@ -1,10 +1,14 @@
 "use client"
 
 import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 import Footer from '@/components/Footer';
 import ScrollReveal from '@/components/ScrollReveal';
 import Hero from '@/components/Hero';
 import Timeline from '@/components/Timeline';
+import { FaArrowRight, FaNetworkWired, FaShieldHalved } from 'react-icons/fa6';
+import { FaRegImage } from 'react-icons/fa6';
 
 const Home = () => {
   const partners = [
@@ -24,6 +28,7 @@ const Home = () => {
       
       <Hero />
 
+      {/* --- SEÇÃO: CADA NEGÓCIO É ÚNICO --- */}
       <section className="relative z-10 py-28 bg-coal cyber-grid">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-oxford/30 rounded-full blur-[100px] animate-pulse-slow pointer-events-none"></div>
 
@@ -36,33 +41,57 @@ const Home = () => {
             <p className="text-lg text-muted mb-8 leading-relaxed">
               Combinamos estratégia, flexibilidade e especialistas para construir a proteção certa, do tamanho exato da sua operação.
             </p>
-            <a href="#contato" className="inline-block px-8 py-4 bg-sienna text-white font-bold rounded-lg hover:bg-sienna/90 transition-all duration-300 shadow-lg hover:shadow-sienna/25 hover:-translate-y-1">
+            <Link href="/#contato" className="inline-block px-8 py-4 bg-sienna text-white font-bold rounded-lg hover:bg-sienna/90 transition-all duration-300 shadow-lg hover:shadow-sienna/25 hover:-translate-y-1">
               Fale com nossos especialistas
-            </a>
+            </Link>
           </ScrollReveal>
           
-          <ScrollReveal delay="delay-2" className="h-full min-h-[400px] bg-oxford/50 rounded-3xl border border-white/10 flex items-center justify-center relative overflow-hidden group">
-             <div className="absolute inset-0 bg-gradient-to-tr from-sienna/20 to-oxford/20 opacity-50 group-hover:opacity-70 transition-opacity"></div>
-             <i className="fa-solid fa-fingerprint text-8xl text-sienna/30 group-hover:text-sienna/50 transition-colors animate-float"></i>
+          {/* Imagem substituindo o ícone antigo */}
+          <ScrollReveal delay="delay-2" className="h-full min-h-[400px] rounded-3xl overflow-hidden relative group border border-white/10 shadow-2xl">
+             <div className="absolute inset-0 bg-sienna/10 z-10 group-hover:bg-transparent transition-colors duration-500"></div>
+             <Image 
+                src="/assets/img/negocio_unico.jpeg" 
+                alt="Especialistas em Cibersegurança" 
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-700"
+             />
           </ScrollReveal>
         </div>
       </section>
 
-      <section className="py-24 bg-oxford border-y border-white/5 relative">
-        <div className="absolute inset-0 cyber-grid opacity-30"></div> {/* Grid sutil */}
+      {/* --- SEÇÃO: NOSSA ESSÊNCIA (COM VÍDEO DE FUNDO) --- */}
+      <section className="py-24 relative border-y border-white/5 overflow-hidden">
+        
+        {/* Vídeo de Background */}
+        <div className="absolute inset-0 z-0">
+            <video 
+                autoPlay 
+                loop 
+                muted 
+                playsInline 
+                className="w-full h-full object-cover opacity-30 blur-[2px]" // Opacidade baixa e leve blur para o texto sobressair
+            >
+                <source src="/assets/img/essencia_video.mp4" type="video/mp4" />
+            </video>
+            {/* Camada de cor para garantir leitura do texto sobre o vídeo */}
+            <div className="absolute inset-0 bg-oxford/90 mix-blend-multiply"></div>
+            <div className="absolute inset-0 cyber-grid opacity-20"></div>
+        </div>
+
         <div className="max-w-[1000px] mx-auto px-6 text-center relative z-10">
           <ScrollReveal>
-            <span className="block text-sienna font-bold tracking-wider uppercase mb-4">Nossa Essência</span>
-            <h3 className="text-3xl md:text-4xl font-bold mb-8 text-eggshell">
+            <span className="block text-sienna font-bold tracking-wider uppercase mb-4 drop-shadow-md">Nossa Essência</span>
+            <h3 className="text-3xl md:text-4xl font-bold mb-8 text-eggshell drop-shadow-lg">
               Antes da cibersegurança se tornar prioridade, <span className="text-mint">ela já era o nosso foco.</span>
             </h3>
-            <p className="text-muted text-xl leading-relaxed max-w-3xl mx-auto">
-              São mais de <strong className="text-eggshell">25 anos</strong> qualificando e entregando projetos que conectam tecnologia, pessoas e estratégia para proteger o que realmente importa.
+            <p className="text-gray-300 text-xl leading-relaxed max-w-3xl mx-auto drop-shadow-md">
+              São mais de <strong className="text-white">25 anos</strong> qualificando e entregando projetos que conectam tecnologia, pessoas e estratégia para proteger o que realmente importa.
             </p>
           </ScrollReveal>
         </div>
       </section>
 
+      {/* --- Restante do Código (Timeline, Parceiros, Notícias...) --- */}
       <section className="py-28 bg-coal overflow-hidden relative">
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-oxford/20 rounded-full blur-[120px] animate-blob"></div>
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-sienna/10 rounded-full blur-[120px] animate-blob animation-delay-2000"></div>
@@ -90,12 +119,16 @@ const Home = () => {
           <ScrollReveal delay="delay-1" className="overflow-hidden py-4 relative w-full mask-gradient">
               <div className="flex w-fit animate-scroll items-center hover:[animation-play-state:paused]">
                   {[...partners, ...partners].map((partner, index) => (
-                    <div key={index} className="partner-card">
-                        <img 
-                          src={`/assets/img/${partner}.png`} 
-                          alt={partner} 
-                          className="partner-logo" 
-                        />
+                    <div key={index} className="partner-card relative">
+                        <div className="relative w-full h-full flex items-center justify-center">
+                          <Image 
+                            src={`/assets/img/${partner}.png`} 
+                            alt={partner}
+                            width={150}
+                            height={60}
+                            className="partner-logo"
+                          />
+                        </div>
                     </div>
                   ))}
               </div>
@@ -107,9 +140,9 @@ const Home = () => {
         <div className="max-w-[1200px] mx-auto px-6 relative z-10">
           <ScrollReveal className="flex justify-between items-end mb-12">
             <h2 className="text-3xl font-bold text-eggshell">Notícias e Artigos</h2>
-            <a href="/blog" className="text-sienna hover:text-mint transition-colors text-sm font-bold uppercase tracking-wider flex items-center gap-2">
-              Ver tudo <i className="fa-solid fa-arrow-right animate-pulse"></i>
-            </a>
+            <Link href="/blog" className="text-sienna hover:text-mint transition-colors text-sm font-bold uppercase tracking-wider flex items-center gap-2">
+              Ver tudo <FaArrowRight className="animate-pulse" />
+            </Link>
           </ScrollReveal>
           
           <div className="grid md:grid-cols-3 gap-8">
@@ -118,7 +151,7 @@ const Home = () => {
                 <div className="h-52 bg-oxford relative overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-t from-coal/80 to-transparent z-10"></div>
                   <div className="w-full h-full bg-oxford group-hover:scale-105 transition-transform duration-700 flex items-center justify-center">
-                    <i className={`fa-regular fa-image text-4xl text-white/20 ${index % 2 === 0 ? 'animate-float' : 'animate-float-delayed'}`}></i>
+                    <FaRegImage className={`text-4xl text-white/20 ${index % 2 === 0 ? 'animate-float' : 'animate-float-delayed'}`} />
                   </div>
                   <span className="absolute top-4 left-4 z-20 bg-sienna text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">{item.category}</span>
                 </div>
@@ -134,8 +167,12 @@ const Home = () => {
 
       <section className="py-24 bg-oxford relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
-            <i className="fa-solid fa-network-wired absolute top-10 left-10 text-9xl animate-float"></i>
-            <i className="fa-solid fa-shield-halved absolute bottom-10 right-10 text-9xl animate-float-delayed"></i>
+            <div className="absolute top-10 left-10 animate-float">
+                <FaNetworkWired className="text-9xl" />
+            </div>
+            <div className="absolute bottom-10 right-10 animate-float-delayed">
+                <FaShieldHalved className="text-9xl" />
+            </div>
         </div>
 
         <div className="max-w-[1000px] mx-auto px-6 relative z-10 rounded-3xl bg-coal/50 border border-white/5 p-12 md:p-16 backdrop-blur-lg flex flex-col md:flex-row items-center justify-between gap-10 shadow-2xl">

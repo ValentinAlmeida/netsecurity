@@ -1,38 +1,39 @@
 "use client"
 
 import React, { useEffect, useRef, useState } from 'react';
+import { FaRocket, FaChartLine, FaHeadset, FaCloud, FaRobot } from 'react-icons/fa6';
 
 const timelineData = [
   { 
     year: "1999", 
     title: "Fundação", 
     desc: "Início das operações com foco em consultoria estratégica.",
-    icon: "fa-rocket" // Foguete
+    Icon: FaRocket
   },
   { 
     year: "2005", 
     title: "Expansão", 
     desc: "Integração de novas tecnologias e parceria com líderes globais.",
-    icon: "fa-chart-line"
+    Icon: FaChartLine
   },
   { 
     year: "2012", 
     title: "Serviços Gerenciados", 
     desc: "Lançamento do portfólio de MSS e monitoramento 24/7.",
-    icon: "fa-headset"
+    Icon: FaHeadset
   },
   { 
     year: "2018", 
     title: "SecOps & Cloud", 
     desc: "Adoção de arquiteturas em nuvem e operação de segurança avançada.",
-    icon: "fa-cloud"
+    Icon: FaCloud
   },
   { 
     year: "Hoje", 
     title: "IA & Futuro", 
     desc: "Integração de inteligência artificial para operações preditivas.",
     highlight: true,
-    icon: "fa-robot"
+    Icon: FaRobot
   },
 ];
 
@@ -104,9 +105,9 @@ const Timeline = () => {
                 <div className="absolute inset-0 rounded-full bg-mint animate-ping opacity-30"></div>
               )}
 
-              <i className={`fa-solid ${item.icon} text-2xl transition-colors duration-500
+              <item.Icon className={`text-2xl transition-colors duration-500
                  ${item.highlight ? 'text-mint' : 'text-sienna group-hover:text-white'}
-              `}></i>
+              `} />
             </div>
 
             <div 

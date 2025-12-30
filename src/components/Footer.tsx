@@ -2,6 +2,8 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
+import { FaLinkedinIn, FaInstagram, FaFacebookF, FaLocationDot, FaShieldHalved, FaUserLock, FaFileContract, FaBullhorn } from 'react-icons/fa6';
 
 const Footer = () => {
   return (
@@ -12,11 +14,14 @@ const Footer = () => {
           
           <div className="lg:col-span-4 flex flex-col items-start">
             <Link href="/" className="flex items-center gap-3 mb-6 group cursor-pointer">
-               <img 
-                  src="/assets/img/logo.png" 
-                  alt="NetSecurity" 
-                  className="h-8 w-auto object-contain grayscale group-hover:grayscale-0 transition-all" 
-               />
+               <div className="relative h-8 w-8">
+                   <Image 
+                      src="/assets/img/logo.png" 
+                      alt="NetSecurity" 
+                      fill
+                      className="object-contain grayscale group-hover:grayscale-0 transition-all" 
+                   />
+               </div>
                <span className="text-xl font-bold tracking-wide text-eggshell">NetSecurity</span>
             </Link>
             <p className="text-muted leading-relaxed max-w-sm mb-6 pr-4">
@@ -24,13 +29,13 @@ const Footer = () => {
             </p>
             <div className="flex gap-4">
               <a href="#" className="w-10 h-10 rounded-full bg-oxford flex items-center justify-center text-eggshell hover:bg-sienna hover:text-white transition-all">
-                <i className="fa-brands fa-linkedin-in"></i>
+                <FaLinkedinIn />
               </a>
               <a href="#" className="w-10 h-10 rounded-full bg-oxford flex items-center justify-center text-eggshell hover:bg-sienna hover:text-white transition-all">
-                <i className="fa-brands fa-instagram"></i>
+                <FaInstagram />
               </a>
               <a href="#" className="w-10 h-10 rounded-full bg-oxford flex items-center justify-center text-eggshell hover:bg-sienna hover:text-white transition-all">
-                <i className="fa-brands fa-facebook-f"></i>
+                <FaFacebookF />
               </a>
             </div>
           </div>
@@ -49,7 +54,7 @@ const Footer = () => {
           <div className="lg:col-span-3">
             <h4 className="text-eggshell font-bold mb-6 tracking-wide text-lg">Escritórios</h4>
             <div className="mb-6 flex items-start gap-3">
-               <i className="fa-solid fa-location-dot text-sienna mt-1"></i>
+               <FaLocationDot className="text-sienna mt-1" />
                <div>
                  <span className="text-eggshell font-bold text-xs uppercase block mb-1">Brasil 🇧🇷</span>
                  <p className="text-muted text-xs leading-relaxed">
@@ -60,7 +65,7 @@ const Footer = () => {
                </div>
             </div>
             <div className="flex items-start gap-3">
-               <i className="fa-solid fa-location-dot text-sienna mt-1"></i>
+               <FaLocationDot className="text-sienna mt-1" />
                <div>
                  <span className="text-eggshell font-bold text-xs uppercase block mb-1">EUA 🇺🇸</span>
                  <p className="text-muted text-xs leading-relaxed">
@@ -78,7 +83,7 @@ const Footer = () => {
               <li>
                 <a href="#" className="text-muted hover:text-mint transition-colors flex items-start gap-3 group">
                   <div className="w-5 flex justify-center mt-0.5 shrink-0">
-                    <i className="fa-solid fa-shield-halved text-sienna group-hover:text-mint transition-colors"></i>
+                    <FaShieldHalved className="text-sienna group-hover:text-mint transition-colors" />
                   </div>
                   <span className="leading-tight">Política de Segurança da Informação</span>
                 </a>
@@ -87,7 +92,7 @@ const Footer = () => {
               <li>
                 <a href="#" className="text-muted hover:text-mint transition-colors flex items-start gap-3 group">
                   <div className="w-5 flex justify-center mt-0.5 shrink-0">
-                    <i className="fa-solid fa-user-lock text-sienna group-hover:text-mint transition-colors"></i>
+                    <FaUserLock className="text-sienna group-hover:text-mint transition-colors" />
                   </div>
                   <span className="leading-tight">Aviso de Privacidade Candidatos de Vagas</span>
                 </a>
@@ -96,7 +101,7 @@ const Footer = () => {
               <li>
                 <a href="#" className="text-muted hover:text-mint transition-colors flex items-start gap-3 group">
                   <div className="w-5 flex justify-center mt-0.5 shrink-0">
-                     <i className="fa-solid fa-file-contract text-sienna group-hover:text-mint transition-colors"></i>
+                     <FaFileContract className="text-sienna group-hover:text-mint transition-colors" />
                   </div>
                   <span className="leading-tight">Política de Privacidade</span>
                 </a>
@@ -105,7 +110,7 @@ const Footer = () => {
               <li>
                 <a href="#" className="text-muted hover:text-mint transition-colors flex items-start gap-3 group">
                   <div className="w-5 flex justify-center mt-0.5 shrink-0">
-                    <i className="fa-solid fa-bullhorn text-sienna group-hover:text-mint transition-colors"></i>
+                    <FaBullhorn className="text-sienna group-hover:text-mint transition-colors" />
                   </div>
                   <span className="leading-tight">Termos para o Canal de Denúncia</span>
                 </a>

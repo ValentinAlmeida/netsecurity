@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -25,11 +26,14 @@ const Header = () => {
       <div className="max-w-[1400px] mx-auto px-4 md:px-8 flex justify-between items-center">
         
         <Link href="/" className="flex items-center gap-3 cursor-pointer group shrink-0">
-          <img 
-              src="/assets/img/logo.png" 
-              alt="NetSecurity" 
-              className="h-8 md:h-10 w-auto object-contain group-hover:opacity-80 transition-opacity" 
-          />
+          <div className="relative h-8 w-8 md:h-10 md:w-10">
+              <Image 
+                  src="/assets/img/logo.png" 
+                  alt="NetSecurity" 
+                  fill
+                  className="object-contain group-hover:opacity-80 transition-opacity" 
+              />
+          </div>
           <span className="text-xl md:text-2xl font-bold tracking-wide text-eggshell group-hover:text-sienna transition-colors">
             NetSecurity
           </span>

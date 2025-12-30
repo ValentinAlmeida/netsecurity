@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Footer from '@/components/Footer';
 import ScrollReveal from '@/components/ScrollReveal';
+import { FaRobot, FaVirus, FaAward, FaShieldCat, FaCodeBranch, FaUsersViewfinder, FaMagnifyingGlass, FaArrowRight, FaRegFolderOpen } from 'react-icons/fa6';
 
 const allPosts = [
   {
@@ -12,7 +13,7 @@ const allPosts = [
     category: "Tendências",
     date: "22 Out, 2025",
     readTime: "5 min",
-    imageIcon: "fa-robot",
+    Icon: FaRobot,
     featured: true
   },
   {
@@ -22,7 +23,7 @@ const allPosts = [
     category: "Ameaças",
     date: "18 Out, 2025",
     readTime: "8 min",
-    imageIcon: "fa-virus",
+    Icon: FaVirus,
     featured: false
   },
   {
@@ -32,7 +33,7 @@ const allPosts = [
     category: "Institucional",
     date: "15 Out, 2025",
     readTime: "3 min",
-    imageIcon: "fa-award",
+    Icon: FaAward,
     featured: false
   },
   {
@@ -42,7 +43,7 @@ const allPosts = [
     category: "Tutoriais",
     date: "10 Out, 2025",
     readTime: "12 min",
-    imageIcon: "fa-shield-cat",
+    Icon: FaShieldCat,
     featured: false
   },
   {
@@ -52,7 +53,7 @@ const allPosts = [
     category: "Ameaças",
     date: "05 Out, 2025",
     readTime: "6 min",
-    imageIcon: "fa-code-branch",
+    Icon: FaCodeBranch,
     featured: false
   },
   {
@@ -62,7 +63,7 @@ const allPosts = [
     category: "Gestão",
     date: "01 Out, 2025",
     readTime: "4 min",
-    imageIcon: "fa-users-viewfinder",
+    Icon: FaUsersViewfinder,
     featured: false
   },
 ];
@@ -122,7 +123,7 @@ export default function Blog() {
               onChange={(e) => setSearchTerm(e.target.value)}
               className="w-full bg-oxford/50 border border-white/10 rounded-lg px-4 py-3 pl-10 text-sm focus:outline-none focus:border-sienna/50 transition-colors"
             />
-            <i className="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-muted"></i>
+            <FaMagnifyingGlass className="absolute left-3 top-1/2 -translate-y-1/2 text-muted" />
           </div>
         </div>
       </section>
@@ -135,7 +136,7 @@ export default function Blog() {
               <div className="h-64 md:h-auto bg-oxford relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-t from-coal/80 to-transparent z-10"></div>
                 <div className="w-full h-full bg-oxford group-hover:scale-105 transition-transform duration-700 flex items-center justify-center">
-                    <i className={`fa-solid ${featuredPost.imageIcon} text-9xl text-white/10`}></i>
+                    <featuredPost.Icon className="text-9xl text-white/10" />
                 </div>
                 <span className="absolute top-6 left-6 z-20 bg-mint text-coal text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-lg">
                     Destaque
@@ -157,7 +158,7 @@ export default function Blog() {
                   {featuredPost.excerpt}
                 </p>
                 <span className="text-sienna font-bold flex items-center gap-2 group-hover:gap-4 transition-all">
-                  Ler artigo completo <i className="fa-solid fa-arrow-right"></i>
+                  Ler artigo completo <FaArrowRight />
                 </span>
               </div>
             </div>
@@ -171,7 +172,7 @@ export default function Blog() {
                 <div className="h-48 bg-oxford relative overflow-hidden shrink-0">
                   <div className="absolute inset-0 bg-gradient-to-t from-coal/90 to-transparent z-10"></div>
                   <div className="w-full h-full bg-oxford group-hover:scale-110 transition-transform duration-700 flex items-center justify-center">
-                    <i className={`fa-solid ${post.imageIcon} text-6xl text-white/10`}></i>
+                    <post.Icon className="text-6xl text-white/10" />
                   </div>
                   <span className="absolute top-4 left-4 z-20 bg-oxford/90 border border-white/10 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider backdrop-blur-sm">
                     {post.category}
@@ -191,7 +192,7 @@ export default function Blog() {
                     {post.excerpt}
                   </p>
                   <span className="text-sienna text-sm font-bold flex items-center gap-2 mt-auto">
-                    Ler mais <i className="fa-solid fa-arrow-right text-xs opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all"></i>
+                    Ler mais <FaArrowRight className="text-xs opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all" />
                   </span>
                 </div>
               </ScrollReveal>
@@ -199,7 +200,7 @@ export default function Blog() {
           </div>
         ) : (
           <div className="text-center py-20 opacity-50">
-            <i className="fa-regular fa-folder-open text-6xl mb-4 text-muted"></i>
+            <FaRegFolderOpen className="text-6xl mb-4 text-muted mx-auto" />
             <p className="text-xl">Nenhum artigo encontrado para esta busca.</p>
           </div>
         )}

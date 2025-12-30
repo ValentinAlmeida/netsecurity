@@ -22,9 +22,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
-      <head>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-      </head>
       <body className={`${poppins.variable} font-sans antialiased bg-coal text-eggshell`}>
         <div className="absolute top-0 left-0 w-full z-50">
           <Header />
