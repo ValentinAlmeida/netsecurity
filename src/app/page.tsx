@@ -65,12 +65,12 @@ const Home = () => {
                 loop 
                 muted 
                 playsInline 
-                className="w-full h-full object-cover opacity-40" 
+                className="w-full h-full object-cover opacity-80" 
             >
                 <source src="/assets/img/essencia_video.mp4" type="video/mp4" />
             </video>
             
-            <div className="absolute inset-0 bg-gradient-to-r from-coal/95 via-coal/80 to-coal/95 mix-blend-multiply"></div>
+            <div className="absolute inset-0 bg-black/30"></div>
             <div className="absolute inset-0 cyber-grid opacity-10"></div>
         </div>
 
@@ -80,7 +80,7 @@ const Home = () => {
             <h3 className="text-3xl md:text-4xl font-bold mb-8 text-eggshell drop-shadow-lg">
               Antes da cibersegurança se tornar prioridade, <span className="text-mint">ela já era o nosso foco.</span>
             </h3>
-            <p className="text-gray-200 text-xl leading-relaxed max-w-3xl mx-auto drop-shadow-md font-medium">
+            <p className="text-gray-100 text-xl leading-relaxed max-w-3xl mx-auto drop-shadow-md font-medium">
               São mais de <strong className="text-white">25 anos</strong> qualificando e entregando projetos que conectam tecnologia, pessoas e estratégia para proteger o que realmente importa.
             </p>
           </ScrollReveal>
@@ -160,7 +160,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="py-24 bg-oxford relative overflow-hidden">
+      <section className="py-20 bg-oxford relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
             <div className="absolute top-10 left-10 animate-float">
                 <FaNetworkWired className="text-9xl" />
@@ -170,18 +170,18 @@ const Home = () => {
             </div>
         </div>
 
-        <div className="max-w-[1000px] mx-auto px-6 relative z-10 rounded-3xl bg-coal/50 border border-white/5 p-12 md:p-16 backdrop-blur-lg flex flex-col md:flex-row items-center justify-between gap-10 shadow-2xl">
+        <div className="max-w-[1000px] mx-auto px-6 relative z-10 rounded-3xl bg-coal/50 border border-white/5 p-8 md:p-10 backdrop-blur-lg flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl">
           <div className="md:w-1/2 text-left">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-eggshell">Assine nossa Newsletter</h2>
-            <p className="text-muted text-lg">Receba insights exclusivos e tendências de cibersegurança diretamente no seu e-mail.</p>
+            <h2 className="text-2xl md:text-3xl font-bold mb-3 text-eggshell">Assine nossa Newsletter</h2>
+            <p className="text-muted text-base">Receba insights exclusivos e tendências de cibersegurança diretamente no seu e-mail.</p>
           </div>
           <div className="md:w-1/2 w-full flex flex-col sm:flex-row gap-4">
             <input 
               type="email" 
               placeholder="Seu e-mail corporativo" 
-              className="flex-1 px-6 py-4 rounded-xl bg-coal border border-white/10 text-eggshell placeholder:text-muted/60 focus:outline-none focus:border-sienna/50 transition-colors"
+              className="flex-1 px-6 py-3 rounded-xl bg-coal border border-white/10 text-eggshell placeholder:text-muted/60 focus:outline-none focus:border-sienna/50 transition-colors"
             />
-            <button className="px-8 py-4 bg-sienna text-white font-bold rounded-xl hover:bg-sienna/90 transition-all shadow-lg hover:shadow-sienna/30 hover:-translate-y-1 whitespace-nowrap">
+            <button className="px-6 py-3 bg-sienna text-white font-bold rounded-xl hover:bg-sienna/90 transition-all shadow-lg hover:shadow-sienna/30 hover:-translate-y-1 whitespace-nowrap">
               Inscrever-se
             </button>
           </div>
